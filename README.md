@@ -8,6 +8,8 @@ Working on Step 1 as of now.. more to follow.
 
 # Open Source Software Employed for this App
 
-A Real Easy To Use Library for Coin Market Cap
+* A Real Easy To Use Library for Coin Market Cap
+
 Crypto Currency Kit
+
 https://github.com/iCell/CryptoCurrencyKit
