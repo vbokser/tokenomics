@@ -7,17 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0A8A7A7D75EAEB4971CEB3F58665B0AB /* Ticker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC39A542012A7EB8A9ECB06751AD4D8 /* Ticker.swift */; };
 		172313F8432476371ACA02615FAA1E06 /* CryptoCurrencyKit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = DB909FD63C466E8B7E715D89DEA43AD4 /* CryptoCurrencyKit-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		18086891EB02BAA2D54E895659BB608C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */; };
 		1CC51B9173FD34E85B20D6080D4B789D /* Pods-Tokenomics-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7133FDBCAB8808B11F706E78040DD5E8 /* Pods-Tokenomics-dummy.m */; };
-		20765719C80FA8DA05568CCEC0D7BA8C /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36CA6C0DDF1710D437C9C0773E96A572 /* Global.swift */; };
-		4B130DBA9D16EF8608C6FB560017B7F2 /* CryptoCurrencyKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B60764A190F41E32A648F3BE64F3DC63 /* CryptoCurrencyKit-dummy.m */; };
+		210E0674B7F21887E507386661ABDB5A /* Graph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C79FB721E2F53943A83012BC9F3E7F5 /* Graph.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		24B99CAFB2AD7D2CB9B69E6A9C32588A /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA8B24B5742EA0CB510F54BADA9E224 /* Request.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		28C582BCAB293127AC6565C1D1786003 /* CryptoCurrencyKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639D7000A9AC6151513D35EBBEA35ED8 /* CryptoCurrencyKit.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		3773660CD82154AABBD411EB0479885C /* CryptoCurrencyKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B60764A190F41E32A648F3BE64F3DC63 /* CryptoCurrencyKit-dummy.m */; };
+		72F391877D91A00486905F8DA8E11D80 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36CA6C0DDF1710D437C9C0773E96A572 /* Global.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		895B2BDD659E71A1AE81C1FF7CEB3558 /* Pods-Tokenomics-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = EE715BE61577201C918F58831BE48AF0 /* Pods-Tokenomics-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		9801E7E863CE11E446B493D49AA92C7F /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA8B24B5742EA0CB510F54BADA9E224 /* Request.swift */; };
 		9FCDE7F1FEDDD683F1376DCDD9FBCD7F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */; };
-		A6B906C10D3ECBF73EBEB90E6EDAAF29 /* Graph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C79FB721E2F53943A83012BC9F3E7F5 /* Graph.swift */; };
-		FB4EED7B172A1A4A3155F416917331D8 /* CryptoCurrencyKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639D7000A9AC6151513D35EBBEA35ED8 /* CryptoCurrencyKit.swift */; };
+		D725DE02D2936D142A4D17858F6EA887 /* Ticker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC39A542012A7EB8A9ECB06751AD4D8 /* Ticker.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -202,7 +202,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BC2C86FB80DE8B00562EDABF491EA066 /* Build configuration list for PBXNativeTarget "CryptoCurrencyKit" */;
 			buildPhases = (
-				00A0E2330F37B501150A94E5FE37EC62 /* Sources */,
+				9A7EB1586BD1E44420B14DE5BBACC0C4 /* Sources */,
 				263F92B3A91346382263FB0020EF8A90 /* Frameworks */,
 				ECD5345B17E33E447FD3BD2B472B3686 /* Headers */,
 			);
@@ -261,24 +261,24 @@
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		00A0E2330F37B501150A94E5FE37EC62 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				4B130DBA9D16EF8608C6FB560017B7F2 /* CryptoCurrencyKit-dummy.m in Sources */,
-				FB4EED7B172A1A4A3155F416917331D8 /* CryptoCurrencyKit.swift in Sources */,
-				20765719C80FA8DA05568CCEC0D7BA8C /* Global.swift in Sources */,
-				A6B906C10D3ECBF73EBEB90E6EDAAF29 /* Graph.swift in Sources */,
-				9801E7E863CE11E446B493D49AA92C7F /* Request.swift in Sources */,
-				0A8A7A7D75EAEB4971CEB3F58665B0AB /* Ticker.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		40199FD48DE39C5AEF0686B686A7865B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				1CC51B9173FD34E85B20D6080D4B789D /* Pods-Tokenomics-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9A7EB1586BD1E44420B14DE5BBACC0C4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3773660CD82154AABBD411EB0479885C /* CryptoCurrencyKit-dummy.m in Sources */,
+				28C582BCAB293127AC6565C1D1786003 /* CryptoCurrencyKit.swift in Sources */,
+				72F391877D91A00486905F8DA8E11D80 /* Global.swift in Sources */,
+				210E0674B7F21887E507386661ABDB5A /* Graph.swift in Sources */,
+				24B99CAFB2AD7D2CB9B69E6A9C32588A /* Request.swift in Sources */,
+				D725DE02D2936D142A4D17858F6EA887 /* Ticker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

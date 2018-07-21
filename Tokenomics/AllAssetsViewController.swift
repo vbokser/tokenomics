@@ -14,7 +14,14 @@ enum State {
     case DisplayData
 }
 
-class FirstViewController: UIViewController {
+enum TableCellTagValues:Int {
+    case rank = 10
+    case assetName = 20
+    case price = 30
+    case marketCap = 40
+}
+
+class AllAssetsViewController: UIViewController {
     @IBOutlet weak var cryptoTableView: UITableView!
     var cryptoArray = ["Bitcoin", "Ethereum", "Ripple"]
     var allTickers:[Ticker] = []
@@ -26,6 +33,8 @@ class FirstViewController: UIViewController {
     var updateCounter:Int = 0
     var numberOfTotalVisibleRows: Int = 0
     
+    var cellHeights: [IndexPath : CGFloat] = [:]
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -46,7 +55,7 @@ class FirstViewController: UIViewController {
             return
         }
 
-        var indexPaths = self.cryptoTableView.indexPathsForVisibleRows
+        let indexPaths = self.cryptoTableView.indexPathsForVisibleRows
         
         
         if let indexPaths = indexPaths {
@@ -60,7 +69,7 @@ class FirstViewController: UIViewController {
 //            let currentCurrency:CryptoCurrencyKit.Money = .usd
 
             for index in indexPaths {
-                var row = index.row
+                let row = index.row
                 
                 CryptoCurrencyKit.fetchTicker(coinName: self.allTickers[row].id, convert: .usd) { r in
                     switch r {
@@ -93,13 +102,13 @@ class FirstViewController: UIViewController {
                                     self.currentState = State.DisplayData
                                     self.updateCounter = 0
                                 
-                                    UIView.setAnimationsEnabled(false)
+//                                    UIView.setAnimationsEnabled(false)
                                     self.cryptoTableView.beginUpdates()
 
-                                    self.cryptoTableView.reloadRows(at: self.indexPathsToReload, with: .none)
-                                    
+//                                    self.cryptoTableView.reloadRows(at: self.indexPathsToReload, with: .none)
+                                    self.cryptoTableView.reloadData()
                                     self.cryptoTableView.endUpdates()
-                                    UIView.setAnimationsEnabled(true)
+//                                    UIView.setAnimationsEnabled(true)
                                 }
                             }
                         }
@@ -136,7 +145,7 @@ class FirstViewController: UIViewController {
 
 }
 
-extension FirstViewController: UITableViewDelegate, UITableViewDataSource
+extension AllAssetsViewController: UITableViewDelegate, UITableViewDataSource
 {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return allTickers.count
@@ -150,27 +159,72 @@ extension FirstViewController: UITableViewDelegate, UITableViewDataSource
             return cell
         }
         
-        let name = cell.viewWithTag(1000) as! UILabel
-        let price = cell.viewWithTag(2000) as! UILabel
+        let rank = cell.viewWithTag(TableCellTagValues.rank.rawValue) as! UILabel
+        let name = cell.viewWithTag(TableCellTagValues.assetName.rawValue) as! UILabel
+        let price = cell.viewWithTag(TableCellTagValues.price.rawValue) as! UILabel
+        let marketcap = cell.viewWithTag(TableCellTagValues.marketCap.rawValue) as! UILabel
+
+        let formatter = NumberFormatter()
+        formatter.locale = Locale.current // Change this to another locale if you want to force a specific locale, otherwise this is redundant as the current locale is the default already
+        formatter.numberStyle = .currency
+
         //        cell.textLabel?.text = cryptoArray[indexPath.row]
         
         let row = indexPath.row
         name.text = allTickers[row].name //cryptoArray[indexPath.row]
         
         if let priceVal = allTickers[row].priceUSD {
-            price.text = "\(priceVal)"
+            //price.text = "\(priceVal)"
+            if priceVal < 1.0 {
+                formatter.minimumFractionDigits = 2
+                formatter.maximumFractionDigits = 5
+            }
+            else {
+                formatter.minimumFractionDigits = 2
+                formatter.maximumFractionDigits = 2
+            }
             
+            if let formattedPrice = formatter.string(from: priceVal as NSNumber) {
+                price.text = "\(formattedPrice)"
+            }
+
         } else {
             price.text = "price unavailable"
         }
         
+        rank.text = "\(allTickers[row].rank)"
+        if let marketcapVal = allTickers[row].marketCapUSD {
+//            marketcap.text = "MktCap: $\(marketcapVal)"
+            
+            formatter.minimumFractionDigits = 2
+            formatter.maximumFractionDigits = 2
+
+            if let formattedMarketCapAmount = formatter.string(from: marketcapVal as NSNumber) {
+                marketcap.text = "MarketCap: \(formattedMarketCapAmount)"
+            }
+
+        }
+        
+//        price.setTextAnimation(text: price.text, color: UIColor.green, duration: 1.0) {
+//            //price.setTextAnimation(text: nil, color: UIColor.white, duration: 1.0)
+//        }
+
         return cell
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 60.0
+//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        return 60.0
+//    }
+
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        cellHeights[indexPath] = cell.frame.size.height+5
     }
     
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        guard let height = cellHeights[indexPath] else { return 70.0 }
+        return height
+    }
+
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let row = indexPath.row
         print("Selected Row = \(row)")
@@ -180,5 +234,22 @@ extension FirstViewController: UITableViewDelegate, UITableViewDataSource
         return false
     }
     
+}
+
+extension UILabel {
+    /**
+     Set Text With animation
+     
+     - parameter text:     String?
+     - parameter duration: NSTimeInterval?
+     */
+    public func setTextAnimation(text: String? = nil, color: UIColor? = nil, duration: TimeInterval?, completion:(()->())? = nil) {
+        UIView.transition(with: self, duration: duration ?? 0.3, options: .transitionCrossDissolve, animations: { () -> Void in
+            self.text = text ?? self.text
+            self.textColor = color ?? self.textColor
+        }) { (finish) in
+            if finish { completion?() }
+        }
+    }
 }
 

@@ -9,8 +9,8 @@
 /* Begin PBXBuildFile section */
 		40390DB1D96BA4AED0A311F5 /* Pods_Tokenomics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D343BB157F696C8E0F6A6D6A /* Pods_Tokenomics.framework */; };
 		D8E854602100E835007F531B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E8545F2100E835007F531B /* AppDelegate.swift */; };
-		D8E854622100E835007F531B /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E854612100E835007F531B /* FirstViewController.swift */; };
-		D8E854642100E835007F531B /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E854632100E835007F531B /* SecondViewController.swift */; };
+		D8E854622100E835007F531B /* AllAssetsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E854612100E835007F531B /* AllAssetsViewController.swift */; };
+		D8E854642100E835007F531B /* PortfolioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E854632100E835007F531B /* PortfolioViewController.swift */; };
 		D8E854672100E835007F531B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8E854652100E835007F531B /* Main.storyboard */; };
 		D8E854692100E838007F531B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8E854682100E838007F531B /* Assets.xcassets */; };
 		D8E8546C2100E838007F531B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8E8546A2100E838007F531B /* LaunchScreen.storyboard */; };
@@ -22,8 +22,8 @@
 		D343BB157F696C8E0F6A6D6A /* Pods_Tokenomics.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tokenomics.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8E8545C2100E835007F531B /* Tokenomics.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tokenomics.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8E8545F2100E835007F531B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D8E854612100E835007F531B /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		D8E854632100E835007F531B /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		D8E854612100E835007F531B /* AllAssetsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllAssetsViewController.swift; sourceTree = "<group>"; };
+		D8E854632100E835007F531B /* PortfolioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioViewController.swift; sourceTree = "<group>"; };
 		D8E854662100E835007F531B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D8E854682100E838007F531B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D8E8546B2100E838007F531B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -73,8 +73,8 @@
 			isa = PBXGroup;
 			children = (
 				D8E8545F2100E835007F531B /* AppDelegate.swift */,
-				D8E854612100E835007F531B /* FirstViewController.swift */,
-				D8E854632100E835007F531B /* SecondViewController.swift */,
+				D8E854612100E835007F531B /* AllAssetsViewController.swift */,
+				D8E854632100E835007F531B /* PortfolioViewController.swift */,
 				D8E854652100E835007F531B /* Main.storyboard */,
 				D8E854682100E838007F531B /* Assets.xcassets */,
 				D8E8546A2100E838007F531B /* LaunchScreen.storyboard */,
@@ -203,9 +203,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D8E854642100E835007F531B /* SecondViewController.swift in Sources */,
+				D8E854642100E835007F531B /* PortfolioViewController.swift in Sources */,
 				D8E854602100E835007F531B /* AppDelegate.swift in Sources */,
-				D8E854622100E835007F531B /* FirstViewController.swift in Sources */,
+				D8E854622100E835007F531B /* AllAssetsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
