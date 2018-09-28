@@ -103,11 +103,19 @@ class AllAssetsViewController: UIViewController {
                                     self.updateCounter = 0
                                 
 //                                    UIView.setAnimationsEnabled(false)
-                                    self.cryptoTableView.beginUpdates()
-
+                                    UIView.performWithoutAnimation {
+                                        self.cryptoTableView.beginUpdates()
+                                        DispatchQueue.main.async {
+                                            self.cryptoTableView.reloadData()
+                                        }
+                                        self.cryptoTableView.endUpdates()
+                                    }
+//                                    self.cryptoTableView.beginUpdates()
 //                                    self.cryptoTableView.reloadRows(at: self.indexPathsToReload, with: .none)
-                                    self.cryptoTableView.reloadData()
-                                    self.cryptoTableView.endUpdates()
+//                                    DispatchQueue.main.async {
+//                                        self.cryptoTableView.reloadData()
+//                                    }
+//                                    self.cryptoTableView.endUpdates()
 //                                    UIView.setAnimationsEnabled(true)
                                 }
                             }
@@ -131,7 +139,10 @@ class AllAssetsViewController: UIViewController {
                 for ticker in tickers {
                     self.allTickers.append(ticker)
                 }
-                self.cryptoTableView.reloadData()
+
+                DispatchQueue.main.async {
+                    self.cryptoTableView.reloadData()
+                }
 
                 //setup timer if we fetched all the tickers
                 self.dataTimer = Timer.scheduledTimer(timeInterval: 5.0, target: self, selector: #selector(self.getCryptoData), userInfo: nil, repeats: true)

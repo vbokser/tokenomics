@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		40390DB1D96BA4AED0A311F5 /* Pods_Tokenomics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D343BB157F696C8E0F6A6D6A /* Pods_Tokenomics.framework */; };
+		D84DEC4D2109411F00C98529 /* AddTokenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84DEC4C2109411F00C98529 /* AddTokenViewController.swift */; };
+		D89C9C0221094703008FEA44 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89C9C0121094703008FEA44 /* Token.swift */; };
 		D8E854602100E835007F531B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E8545F2100E835007F531B /* AppDelegate.swift */; };
 		D8E854622100E835007F531B /* AllAssetsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E854612100E835007F531B /* AllAssetsViewController.swift */; };
 		D8E854642100E835007F531B /* PortfolioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E854632100E835007F531B /* PortfolioViewController.swift */; };
@@ -20,6 +22,8 @@
 		4CF32B0511E350D07AB7355B /* Pods-Tokenomics.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tokenomics.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tokenomics/Pods-Tokenomics.debug.xcconfig"; sourceTree = "<group>"; };
 		5B657851596857E873F745EC /* Pods-Tokenomics.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tokenomics.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tokenomics/Pods-Tokenomics.release.xcconfig"; sourceTree = "<group>"; };
 		D343BB157F696C8E0F6A6D6A /* Pods_Tokenomics.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tokenomics.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D84DEC4C2109411F00C98529 /* AddTokenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTokenViewController.swift; sourceTree = "<group>"; };
+		D89C9C0121094703008FEA44 /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
 		D8E8545C2100E835007F531B /* Tokenomics.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tokenomics.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8E8545F2100E835007F531B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D8E854612100E835007F531B /* AllAssetsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllAssetsViewController.swift; sourceTree = "<group>"; };
@@ -79,6 +83,8 @@
 				D8E854682100E838007F531B /* Assets.xcassets */,
 				D8E8546A2100E838007F531B /* LaunchScreen.storyboard */,
 				D8E8546D2100E838007F531B /* Info.plist */,
+				D84DEC4C2109411F00C98529 /* AddTokenViewController.swift */,
+				D89C9C0121094703008FEA44 /* Token.swift */,
 			);
 			path = Tokenomics;
 			sourceTree = "<group>";
@@ -203,6 +209,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D84DEC4D2109411F00C98529 /* AddTokenViewController.swift in Sources */,
+				D89C9C0221094703008FEA44 /* Token.swift in Sources */,
 				D8E854642100E835007F531B /* PortfolioViewController.swift in Sources */,
 				D8E854602100E835007F531B /* AppDelegate.swift in Sources */,
 				D8E854622100E835007F531B /* AllAssetsViewController.swift in Sources */,
@@ -353,6 +361,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = W269739UBV;
 				INFOPLIST_FILE = Tokenomics/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -372,6 +381,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = W269739UBV;
 				INFOPLIST_FILE = Tokenomics/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
